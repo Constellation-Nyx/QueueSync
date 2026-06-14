@@ -1,0 +1,567 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #070b14;
+  font-family: Inter, sans-serif;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  gap: 25px;
+  padding: 30px;
+}
+
+/* LEFT PANEL */
+
+.left-panel {
+  flex: 1;
+  background: #0f172a;
+  border-radius: 20px;
+  padding: 25px;
+  color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+}
+
+.badge {
+  background: #e9d5ff;
+  color: #581c87;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+.fade-in {
+  margin-top: 18px;
+  margin-bottom: 20px;
+
+  color: #cbd5e1;
+
+  font-size: 1rem;
+
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats {
+  display: flex;
+  gap: 15px;
+}
+
+.stat-card {
+  flex: 1;
+
+  background: #1e293b;
+
+  padding: 20px;
+
+  border-radius: 15px;
+}
+
+.stat-card p {
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+.stat-card h3 {
+  font-size: 2rem;
+  line-height: 1;
+  margin-top: 10px;
+}
+.serving-token {
+  font-size: 1rem !important;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.current-name {
+  display: block;
+  margin-top: 20px;
+  color: #cbd5e1;
+  font-size: 1rem;
+}
+
+.waiting-text {
+  display: block;
+  margin-top: 15px;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.call-btn {
+  margin-top: 20px;
+
+  width: 100%;
+
+  background: #c4b5fd;
+
+  color: #312e81;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.avg-card {
+  margin-top: 20px;
+
+  background: #1e293b;
+
+  padding: 18px;
+
+  border-radius: 15px;
+}
+
+.avg-card label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.avg-card input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.activity-card {
+  margin-top: 20px;
+
+  background: #1e293b;
+
+  padding: 20px;
+
+  border-radius: 15px;
+
+  max-height: 350px;
+
+  overflow-y: auto;
+}
+
+.activity-card h3 {
+  margin-bottom: 15px;
+}
+
+.activity-item {
+  margin-bottom: 10px;
+  color: #cbd5e1;
+  font-size: 14px;
+}
+
+/* RIGHT PANEL */
+
+.right-panel {
+  flex: 1;
+}
+
+.add-card,
+.queue-card {
+  background: #0f172a;
+
+  color: white;
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  margin-bottom: 20px;
+}
+
+.add-card input {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 12px;
+
+  border-radius: 10px;
+
+  border: none;
+}
+
+.add-btn {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 12px;
+
+  background: #109283;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+}
+
+.queue-item {
+  background: #1e293b;
+
+  margin-top: 10px;
+
+  padding: 15px;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.delete-btn {
+  width: 7%;
+  padding: 6px 10px;
+  color: #e94c4c;
+  font-size: 16px;
+}
+
+.clear-btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #dc8a26;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.clear-log-btn {
+  background: transparent;
+  border: 1px solid #475569;
+  color: #cbd5e1;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: 0.2s;
+}
+
+.clear-log-btn:hover {
+  background: #334155;
+}
+
+
+/*PATIENT VIEW*/
+
+.patient-screen {
+  min-height: 100vh;
+  background: #070b14;
+  color: white;
+  padding: 40px;
+}
+
+.patient-header {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.patient-header h1 {
+  font-size: 2.8rem;
+}
+
+.patient-header p {
+  color: #94a3b8;
+  margin-top: 10px;
+}
+
+.patient-main-card {
+  background: #0f172a;
+  border-radius: 24px;
+  padding: 50px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.label {
+  color: #94a3b8;
+  letter-spacing: 2px;
+}
+
+.token-number {
+  font-size: 5rem;
+  margin-top: 15px;
+  color: #c4b5fd;
+}
+
+.patient-name {
+  margin-top: 12px;
+  font-size: 1.2rem;
+  color: #cbd5e1;
+}
+
+.patient-stats {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.patient-stat-card {
+  flex: 1;
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.patient-stat-card p {
+  color: #94a3b8;
+}
+
+.patient-stat-card h3 {
+  font-size: 2rem;
+  margin-top: 10px;
+}
+
+.queue-display {
+  background: #0f172a;
+  border-radius: 20px;
+  padding: 25px;
+}
+
+.queue-display h3 {
+  margin-bottom: 15px;
+}
+
+.patient-queue-item {
+  display: flex;
+  justify-content: space-between;
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+.view-switcher {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+
+  display: flex;
+  gap: 10px;
+
+  z-index: 1000;
+}
+
+.view-switcher button {
+  padding: 10px 15px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #1e293b;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.active-view {
+  background: #c4b5fd !important;
+  color: #312e81 !important;
+  font-weight: bold;
+}
+
+.token-check-card {
+  background: #0f172a;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 25px;
+}
+
+.token-check-card input {
+  width: 40%;
+  background: #1e293b;
+  color: white;
+
+  border: 1px solid #334155;
+  border-radius: 22px;
+
+  padding: 14px;
+  margin-top: 12px;
+
+  outline: none;
+}
+
+.token-check-card input:focus {
+  border-color: #c4b5fd;
+}
+
+.token-check-card button {
+  width: 20%;
+
+  margin-top: 12px;
+
+  background: #c4b5fd;
+  color: #312e81;
+
+  border: none;
+  border-radius: 22px;
+
+  padding: 14px;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+.token-check-card button:hover {
+  transform: translateY(-2px);
+}
+
+.status-result {
+  margin-top: 18px;
+
+  background: #1e293b;
+  border-radius: 14px;
+
+  padding: 18px;
+}
+
+.status-result p {
+  color: #e2e8f0;
+  margin-bottom: 8px;
+}
+
+.status-message {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.fade-patient {
+  animation: patientFade 0.7s ease;
+}
+
+@keyframes patientFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.patient-main-card {
+  animation: patientFade 0.6s ease;
+}
+
+.patient-stats {
+  animation: patientFade 0.9s ease;
+}
+
+.token-check-card {
+  animation: patientFade 1.2s ease;
+}
+
+.queue-display {
+  animation: patientFade 1.5s ease;
+}
+
+.header {
+  animation: receptionFade 0.4s ease;
+}
+
+.reception-fade {
+  animation: receptionFade 0.7s ease;
+}
+
+@keyframes receptionFade {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats {
+  animation: receptionFade 0.7s ease;
+}
+
+.call-btn {
+  animation: receptionFade 0.9s ease;
+}
+
+.avg-card {
+  animation: receptionFade 1.1s ease;
+}
+
+.activity-card {
+  animation: receptionFade 1.3s ease;
+}
+
+.add-card {
+  animation: receptionFade 0.8s ease;
+}
+
+.queue-card {
+  animation: receptionFade 1.1s ease;
+}
+
+.clear-btn {
+  animation: receptionFade 1.4s ease;
+}
+
+.serving-token {
+  font-size: 4rem !important;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.queue-item,
+.patient-queue-item {
+  transition: 0.2s;
+}
+
+.queue-item:hover,
+.patient-queue-item:hover {
+  transform: translateY(-2px);
+}
