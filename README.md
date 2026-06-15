@@ -11,11 +11,11 @@ Real-time hospital queue management system built using React, Node.js, Express a
 - Activity logs
 
 ## Tech Stack
-**Frontend**: React + Vite
-**Backend**: Express.js + Socket.IO
-**Real-time Communication**: WebSockets (Socket.IO)
-**Storage**: Local Storage (Prototype Version)
-**Future Enhancement**: MongoDB for persistent queue and analytics storage
+**Frontend**: React + Vite\
+**Backend**: Express.js + Socket.IO\
+**Real-time Communication**: WebSockets (Socket.IO)\
+**Storage**: Local Storage (Prototype Version)\
+**Future Enhancement**: MongoDB for persistent queue and analytics storage\
 
 ## Run Locally
 
