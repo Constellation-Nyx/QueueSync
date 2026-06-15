@@ -68,17 +68,15 @@ function ReceptionView({
 
         <div className="avg-card">
 
-          <label>
-            Avg Consultation Time (min)
-          </label>
+            <label>
+                Average Consultation Time
+            </label>
 
-          <input
-            type="number"
-            value={avgTime}
-            onChange={(e) =>
-              setAvgTime(e.target.value)
-            }
-          />
+            <h2>
+                {avgTime > 0
+                    ? `${avgTime} min`
+                    : "Not enough data"}
+            </h2>
 
         </div>
 

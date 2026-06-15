@@ -28,9 +28,25 @@ function App() {
     JSON.parse(localStorage.getItem("currentToken")) || null
   );
 
-  const [avgTime, setAvgTime] = useState(
-    JSON.parse(localStorage.getItem("avgTime")) || 10
+  const [consultationTimes, setConsultationTimes] =
+    useState([]);
+
+  const [avgTimeState, setAvgTime] = useState(
+    JSON.parse(localStorage.getItem("avgTime")) ?? 0
   );
+
+  const avgTime =
+    consultationTimes.length > 0
+      ? Math.round(
+          consultationTimes.reduce(
+            (a, b) => a + b,
+            0
+          ) / consultationTimes.length
+        )
+      : avgTimeState;
+
+  const [lastCallTime, setLastCallTime] =
+    useState(null);
 
   const [activityLog, setActivityLog] = useState(
     JSON.parse(localStorage.getItem("activityLog")) || []
@@ -111,6 +127,19 @@ function App() {
   };
 
   const callNextToken = () => {
+    const now = Date.now();
+  
+if (lastCallTime) {
+  const duration =
+    (now - lastCallTime) / 60000;
+
+  setConsultationTimes((prev) => [
+    ...prev,
+    duration,
+  ]);
+}
+
+setLastCallTime(now);
     if (queue.length === 0) return;
 
     const nextPatient = queue[0];
@@ -175,6 +204,9 @@ function App() {
     });
 
     setTokenCounter(0);
+    setConsultationTimes([]);
+    setLastCallTime(null);
+    setAvgTime(0);
 
     setActivityLog([
       "Queue Reset",
@@ -191,7 +223,10 @@ function App() {
       return;
 
     setActivityLog([]);
-
+    setConsultationTimes([]);
+    setLastCallTime(null);
+    setAvgTime(0);
+    localStorage.removeItem("avgTime");
     localStorage.removeItem("activityLog");
   };
 
@@ -207,7 +242,6 @@ return (
           queue={queue}
           currentToken={currentToken}
           avgTime={avgTime}
-          setAvgTime={setAvgTime}
           activityLog={activityLog}
           addPatient={addPatient}
           callNextToken={callNextToken}
